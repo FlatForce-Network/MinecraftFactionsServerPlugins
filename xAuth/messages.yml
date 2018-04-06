@@ -1,0 +1,212 @@
+# xAuth v2.6 Language File
+# THIS HEADER IS USED AS A SIGNATURE. PLEASE DO NOT REMOVE.
+join:
+    register: '{RED}You are not registered.{NEWLINE}{RED}Please register using /register <password>.'
+    login: '{RED}Please log in using /login <password>.'
+    resume: '{BRIGHTGREEN}Welcome back, your login session has been resumed.'
+    non-premium: 'Non-premium user ''{TARGET}'' detected'
+    error:
+        lockout: 'You are temporarily locked out for exceeding the incorrect password threshold.'
+        name: 'Your name contains one or more illegal characters.'
+        online: 'You are already online!'
+
+register:
+    usage: '{RED}Correct Usage: /register <password> [email]'
+    permission: '{RED}You do not have permission to use the register command!'
+    success: '{BRIGHTGREEN}You have successfully registered!{NEWLINE}{BRIGHTGREEN}You may now log in using /login <password>'
+    error:
+        disabled: '{RED}Registrations are currently disabled!'
+        registered: '{RED}You are already registered!'
+        limit: '{RED}You may not register any more accounts!'
+        password: '{RED}Your password must be at least {PWMINLENGTH} characters long!'
+        email: '{RED}Please use a valid email address when registering!'
+        general: '{RED}Something went wrong while creating your account!'
+
+login:
+    usage: '{RED}Correct Usage: /login <password>'
+    permission: '{RED}You do not have permission to use the login command!'
+    success: '{BRIGHTGREEN}You are now logged in!'
+    error:
+        registered: '{RED}You are not registered!'
+        authenticated: '{RED}You are already logged in!'
+        password: '{RED}Incorrect password!'
+        active: '{RED}Your account is locked!'
+        general: '{RED}Something went wrong while logging you in!'
+
+logout:
+    permission: '{RED}You do not have permission to use the logout command!'
+    success: '{BRIGHTGREEN}You have been logged out!'
+    error:
+        logged: '{RED}You are not logged in!'
+        general: '{RED}Something went wrong while logging you out!'
+
+quit:
+    permission: '{RED}You do not have permission to use the quit command!'
+    success: '{BRIGHTGREEN}Client closed connection.'
+    error:
+        logged: '{RED}You are not logged in!'
+        general: '{RED}Something went wrong while ending your session!'
+
+changepw:
+    usage: '{RED}Correct Usage: /changepw <old password> <new password>'
+    permission: '{RED}You do not have permission to use the changepassword command!'
+    success: '{BRIGHTGREEN}Password changed!'
+    error:
+        disabled: '{RED}Password changes are currently disabled.'
+        logged: '{RED}You are not logged in!'
+        incorrect: '{RED}Incorrect old password!'
+        invalid: '{RED}Your new password does not meet complexity requirements!'
+        general: '{RED}Something went wrong while changing your password!'
+
+resetpw:
+    usage: '{BRIGHTGREEN}Use /resetpw [set] to reset your password or set your secret message.'
+    reset-usage: '{BRIGHTGREEN}Use /changepw <new password> to reset your password.'
+    permission: '{RED}You do not have permission to use the resetpassword command!'
+
+authurl:
+    registration: '{RED}AuthURL registration is disabled.'
+    changepw: '{RED}AuthURL does not support password changes.'
+    resetpw: '{RED}AuthURL does not support password resets.'
+
+misc:
+    illegal: '{GRAY}You must be logged in to do that!'
+    timeout: 'You have taken too long to log in!'
+    strikeout: 'You have entered too many invalid passwords!'
+    reloaded: '{RED}Server reloaded, you must log in.'
+    active: '{RED}Your account is locked! Please contact an admin.'
+    access-denied: '{RED}The access to ''{TARGET}'' is restricted.'
+    invalid-command: '{RED}Command ''{TARGET}'' is not a valid command.'
+    command-from-console: '{RED}Command ''{TARGET}'' can not be executed from console.'
+
+admin:
+    permission: '{RED}You do not have permission to use this command!'
+    target-permission: '{RED}You do not have permission to use ''{TARGET}'' as target!'
+    debug: 'Debugging level set to %s'
+    register:
+        usage: '{RED}Correct Usage: /xauth register <player> <password> [email]'
+        success: '{BRIGHTGREEN}Account successfully created for: {WHITE}{TARGET}'
+        error:
+            registered: '{RED}This player is already registered!'
+            general: '{RED}Something went wrong while creating an account for {TARGET}'
+    changepw:
+        usage: '{RED}Correct Usage: /xauth changepw <player> <new password> [pwtype]'
+        success: '{TARGET}''s {BRIGHTGREEN}password has been changed!'
+        error:
+            registered: '{RED}This player is not registered!'
+            general: '{RED}Something went wrong while changing {TARGET}''s password!'
+    resetpw:
+        usage: '{RED}Correct Usage: /xauth resetpw <player> [pwtype]'
+        success:
+            command: '{TARGET}''s {BRIGHTGREEN}password has been reset!'
+            player: '{BRIGHTGREEN}Your password has been changed!'
+            target: '{BRIGHTGREEN}Your Password has been reset by an Administrator!'
+        error:
+            registered: '{RED}This player is not registered!'
+            not-online: '{RED}This player is not online!'
+            general: '{RED}Something went wrong while changing {TARGET}''s password!'
+    logout:
+        usage: '{RED}Correct Usage: /xauth logout <player>'
+        error:
+            logged: '{TARGET} {RED}is not logged in!'
+            general: '{RED}Something went wrong while logging this player out!'
+        success:
+            player: '{TARGET} {BRIGHTGREEN}has been logged out!'
+            target: '{BRIGHTGREEN}You have been logged out by an Administrator!'
+    unregister:
+        usage: '{RED}Correct Usage: /xauth unregister <player>'
+        error:
+            registered: '{RED}This player is not registered!'
+            general: '{RED}Something went wrong while unregistering this player!'
+        success:
+            player: '{TARGET} {BRIGHTGREEN}has been unregistered!'
+            target: '{RED}You have been unregistered and logged out!'
+    location:
+        usage: '{RED}Correct Usage: /xauth location set|remove [global]'
+        set:
+            error:
+                global: '{RED}Global teleport location is set to this world.{NEWLINE}{RED}Please remove it first.'
+                general: '{RED}Something went wrong while setting this location!'
+            success:
+                regular: '{BRIGHTGREEN}Teleport location for this world set to your location!'
+                global: '{BRIGHTGREEN}Global teleport location set to your location!'
+        remove:
+            error:
+                noglobal: '{RED}A global teleport location is not set!'
+                notset: '{RED}This world does not have a teleport location!'
+                global: '{RED}Global teleport location is set to this world.{NEWLINE}{RED}Please use /xauth location remove global'
+                general: '{RED}Something went wrong while removing this location!'
+            success:
+                regular: '{BRIGHTGREEN}Teleport location for this world has been removed!'
+                global: '{BRIGHTGREEN}Global teleport location has been removed!'
+    reload: '{BRIGHTGREEN}xAuth reloaded.'
+    activate:
+        usage: '{RED}Correct Usage: /xauth activate <player>'
+        error:
+            registered: '{RED}The player {TARGET} is not registered!'
+            registeredM: '{RED}{TARGET} aren''t registered!'
+            active: '{RED}The account for {TARGET} is already active!'
+            activeM: '{RED}The accounts for {TARGET} are already active!'
+            general: '{RED}Something went wrong while activating the account {TARGET}!'
+            generalM: '{RED}Something went wrong while activating the accounts!'            
+        success: '{BRIGHTGREEN}The account for {TARGET} has been activated!'
+        successM: '{BRIGHTGREEN}{TARGET} accounts have been activated!'
+    checkpaid:
+        usage '{RED}Correct Usage: /xauth checkpaid <players>'
+        error:
+            general: '{RED}The account for ''{TARGET}'' could not be validated as paid'
+        success:
+            account: '{BRIGHTGREEN}The account for ''{TARGET}'' has been validates as paid'
+            all: '{BRIGHTGREEN}You have {TARGET} premium users'
+    profile:
+        usage: '{RED}Correct Usage: /xauth profile [player]'
+        error:
+            registered: '{RED}This player is not registered!'
+            console: '{RED}Invalid argument count.'
+            general: '{RED}Something went wrong while executing this command!'
+        success: '{BRIGHTGREEN}{TARGET}''s profile!'
+    lock:
+        usage: '{RED}Correct Usage: /xauth lock <player>'
+        error:
+            registered: '{RED}The player {TARGET} is not registered!'
+            registeredM: '{RED}The players {TARGET} aren''t registered!'
+            locked: '{RED}The account for {TARGET} is already locked!'
+            lockedM: '{RED}The accounts for {TARGET} are already locked!'
+            general: '{RED}Something went wrong while locking the account {TARGET}!'
+            generalM: '{RED}Something went wrong while locking the accounts!'            
+        success: '{BRIGHTGREEN}The account for {TARGET} has been locked!'
+        successM: '{BRIGHTGREEN}{TARGET} accounts have been locked!'
+    count:
+        usage: '{RED}Correct Usage: /xauth count <all|active|locked|premium|non-premium>'
+        error:
+            general: '{RED}Something went wrong while counting the accounts!'
+        success:
+            all: '{BRIGHTGREEN}{TARGET} accounts are currently registered'
+            active: '{BRIGHTGREEN}{TARGET} accounts are currently active'
+            locked: '{BRIGHTGREEN}{TARGET} accounts are currently locked'
+            premium: '{BRIGHTGREEN}{TARGET} accounts are premium'
+            non-premium: '{RED}{TARGET} accounts are non-premium'
+    config:
+        usage: '{RED}Correct Usage: /xauth config <node> <value>'
+        error:
+            is-section: '{RED}This node is a section and cannot be configured!'
+            exist: '{RED}This configuration node does not exist!'
+            int: '{RED}This configuration node requires an integer value!'
+            invalid: '{RED}This setting cannot be altered using this command!'
+        success: '{BRIGHTGREEN}Configuration updated!'
+        value: '{BRIGHTGREEN}%s: {WHITE}%s'
+version:
+    current-version: '{BRIGHTGREEN}xAuth version: %s'
+    updater:
+        disabled: '{RED}The server administrator has disabled the updating system.'
+        autoupdate: '{BRIGHTGREEN}Type /xauth upgrade if you would like to automatically update.'
+        update-available: '{BRIGHTGREEN}A new version is available: %s, a release for %s available at %s.'
+        update-inprogress: '{BRIGHTGREEN}Upgrade in progress.'
+        update-finished: '{BRIGHTGREEN}The update was successfully downloaded. Latest version %s will become active after server restart.'
+        no-update-needed: '{BRIGHTGREEN}The latest version %s is already installed.'
+        error:
+            download: '{RED}The updater found an update, but was unable to download it.'
+            dbo: '{RED}The updater was unable to contact dev.bukkit.org to download the file.'
+            noversion: '{RED}When running the version check, the file on DBO did not matched the right format.'
+            badid: 'The id provided by the plugin running the updater was invalid and doesn''t exist on DBO.'
+            apikey: 'The server administrator has improperly configured their API key in the configuration.'
+    success: '{BRIGHTGREEN}Latest xAuth version is %s'

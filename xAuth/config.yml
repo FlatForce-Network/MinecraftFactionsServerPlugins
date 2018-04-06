@@ -1,0 +1,97 @@
+main:
+    auto-disable: false
+    check-premium: true
+    reload-on-join: false
+mysql:
+    enabled: false
+    host: localhost
+    port: 3306
+    user: user
+    password: password
+    database: xauth
+    tables:
+        account: accounts
+        location: locations
+        lockout: lockouts
+        playerdata: playerdata
+        playerstorage: playerstorage
+        session: sessions
+permissions:
+    backend: bukkit
+    use-material-names: true
+    debug: false
+authurl:
+    enabled: false
+    url: http://localhost
+    registration: false
+    status: false
+    groups: false
+    broadcast-login: false
+single-session:
+    reverse: true
+    guests:
+        reverse: false
+        immunity-length: 5
+registration:
+    enabled: true
+    forced: true
+    require-email: false
+    validate-email: false
+    account-limit: 0
+    activation: false
+    require-login: true
+password:
+    default-type: 0
+    convert-password: false
+    min-length: 6
+    allow-change: true
+    complexity:
+        lowercase: false
+        uppercase: false
+        number: false
+        symbol: false
+guest:
+    timeout: 300
+    notify-cooldown: 5
+    hide-inventory: true
+    protect-location: true
+    gamemode: 'ADVENTURE'
+    allow:
+        player:
+            chat: false
+            interact: false
+            move: false
+            pickup: false
+            command:
+                register: true
+                login: true
+                quit: true
+            damage: false
+            regain: false
+            level: false
+            splash: false
+            target: false
+        block:
+            place: false
+            break: false
+        entity:
+            damage: false
+            target: false
+session:
+    length: 3600
+    verifyip: true
+    godmode-length: 5
+strikes:
+    amount: 5
+    lockout-length: 3600
+account:
+    track-last-login: true
+filter:
+    min-length: 3
+    allowed: ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890_
+    disallowed: ''
+    blank-name: true
+    commands: true
+groups:
+    move-on-register: 'Novice'
+    auto-assign: false
